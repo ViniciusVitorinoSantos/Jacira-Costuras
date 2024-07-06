@@ -137,19 +137,16 @@ footer#rodape {
     <!--Projeto de um site de costura para a minha avó jacira-->
 </head>
 
+
 <body>
-    <!--modelo landing page vai ser hospedado no github pages -->
     <div id="interface">
-
-
         <header id="cabecalho">
-
             <div id="cab">
-                <img src="./jaciraCosturas.png" alt="cabecalho do site" id="img_jaci">
+                <img src="jaciraCosturas.png" alt="cabecalho do site" id="img_jaci">
             </div>
-            <div id="navegacao">
+            <div>
                 <nav id="menu">
-
+                    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
                     <ul>
                         <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#nossa">Nossa História</a></li>
@@ -157,11 +154,8 @@ footer#rodape {
                         <li><a href="#diff">O Que Nos Diferencia</a></li>
                         <li><a href="#venha">Venha Nos Conhecer</a></li>
                     </ul>
+                </nav>
             </div>
-
-
-            </nav>
-
         </header>
 
         <section id="texto">
@@ -233,7 +227,15 @@ footer#rodape {
             <p>Desenvolvido por <a href="">Vinicius Vitorino</a></p>
         </footer>
     </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav#menu ul');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
+
+
 <script>
 
 </script>
