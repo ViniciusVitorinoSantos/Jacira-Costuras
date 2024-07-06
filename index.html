@@ -103,14 +103,25 @@
             padding: 10px;
             cursor: pointer;
         }
+
+        /* Estilos para as imagens do topo */
+        #cab {
+            width: 100%;
+            overflow: hidden;
+            background: url("imagem01.jpg");
+        }
+
+        #cab img#img_jaci {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div id="interface">
-
         <header id="cabecalho">
-
             <div id="cab">
                 <img src="jaciraCosturas.png" alt="cabecalho do site" id="img_jaci">
             </div>
@@ -126,7 +137,6 @@
                     </ul>
                 </nav>
             </div>
-            
         </header>
 
         <section id="texto">
@@ -204,9 +214,9 @@
             const menu = document.querySelector('nav#menu ul');
             menu.classList.toggle('show');
         }
-        
+
         // Close the menu when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const menu = document.querySelector('nav#menu ul');
             const toggle = document.querySelector('.menu-toggle');
 
