@@ -6,104 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto real site de costura</title>
     <style>
-        @font-face {
-            font-family: 'FonteLogo';
-            src: url("_fonts/BubblegumSans-Regular.ttf");
-        }
+       @font-face {
+    font-family: 'FonteLogo';
+    src: url("_fonts/BubblegumSans-Regular.ttf");
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            margin: auto;
-            background-color: #dcdcdc;
-        }
+body {
+    margin: auto;
+    background-color: #dcdcdc;
+    font-family: Arial, sans-serif;
+}
 
-        div#interface {
-            width: 900px;
-            background-color: #ffffff;
-            margin: -20px auto 0px auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
-            padding: 20px;
-        }
+div#interface {
+    max-width: 900px;
+    background-color: #ffffff;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    padding: 20px;
+}
 
-        p {
-            text-align: justify;
-            text-indent: 50px;
-            margin-bottom: 30px;
-            width: 100%;
-        }
+p {
+    text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+}
 
-        a {
-            color: #606060;
-            text-decoration: none;
-        }
+a {
+    color: #606060;
+    text-decoration: none;
+}
 
-        h1{
-            font-family: 'FonteLogo';
-        }
-        nav#menu {
-            display: block;
-        }
+h1 {
+    font-family: 'FonteLogo';
+}
 
-        nav#menu ul {
-            display: inline-block;
-            list-style: none;
-            text-transform: uppercase;
-            position: absolute;
-            top: 200px;
-            left: 168px;
-            float: left;
-        }
+nav#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        nav#menu ul li {
-            opacity: 0.9;
-            display: inline-block;
-            background-color: #dddddd;
-            padding: 1px;
-            margin: 0px;
-            transition: background-color 1s;
-            /*https://autoprefixer.github.io/pt-br/  --> para manter a retrocompatibilidade */
-            -webkit-transition: background-color 1s;
-            -o-transition: background-color 1s;
-            transition: background-color 1s;
-        }
+nav#menu ul {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+}
 
-        nav#menu li:hover {
-            background-color: #606060;
-            cursor: pointer;
-        }
+nav#menu ul li {
+    opacity: 0.9;
+    background-color: #dddddd;
+    padding: 1px;
+    margin: 0px;
+    transition: background-color 1s;
+}
 
-        nav#menu ul li a {
-            color: #ffffff;
+nav#menu li:hover {
+    background-color: #606060;
+    cursor: pointer;
+}
 
-        }
+nav#menu ul li a {
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+}
 
-        nav#menu h1 {
-            display: none;
-        }
+nav#menu a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+}
 
-        nav#menu a {
-            color: #000000;
-            text-decoration: none;
-            float: left;
-        }
+nav#menu h1 {
+    display: none;
+}
 
-        nav#menu a:hover {
-            color: #ffffff;
-            text-decoration: underline;
-            text-decoration-color: #ffffff;
-        }
+section#texto {
+    margin: auto;
+    text-align: justify;
+    text-indent: 20px;
+}
 
+div#cab {
+    background: url("imagem01.jpg");
+    margin: 0px;
+    width: 100%;
+    height: 200px;
+}
 
-        section#texto {
-            margin: auto;
-            text-align: justify;
-            text-indent: 20px;
-        }
+div#cab img#img_jaci {
+    width: 100%;
+    height: 300px;
+    opacity: 0.8;
+    margin-top: -55px;
+}
 
         div#cab {
             background: url("./imagem01.jpg");
@@ -111,25 +114,25 @@
             width: 100%;
             height: 200px;
 
-        }
+@media (max-width: 768px) {
+    nav#menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
 
-        div#cab img#img_jaci {
-            width: 100%;
-            height: 300px;
-            opacity: 0.8;
-            margin-top: -55px;
+    nav#menu ul.show {
+        display: flex;
+    }
 
-        }
+    .menu-toggle {
+        display: block;
+        background: #dddddd;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
 
-        nav#menu {
-            margin: 20px;
-            text-indent: 20px;
-            text-decoration: none;
-        }
-
-        footer#rodape {
-            border-top: solid 1px #000000;
-        }
     </style>
     <!--Projeto de um site de costura para a minha avó jacira-->
 </head>
@@ -144,20 +147,18 @@
             <div id="cab">
                 <img src="./jaciraCosturas.png" alt="cabecalho do site" id="img_jaci">
             </div>
-            <div>
-                <nav id="menu">
 
-                    <ul>
-                        <li><a href="#sobre">Sobre Nós</a></li>
-                        <li><a href="#nossa">Nossa História</a></li>
-                        <li><a href="#pass">Passando o Bastão</a></li>
-                        <li><a href="#diff">O Que Nos Diferencia</a></li>
-                        <li><a href="#venha">Venha Nos Conhecer</a></li>
-                    </ul>
-    
-                </nav>
-            </div>
-            
+            <nav id="menu">
+
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#nossa">Nossa História</a></li>
+                    <li><a href="#pass">Passando o Bastão</a></li>
+                    <li><a href="#diff">O Que Nos Diferencia</a></li>
+                    <li><a href="#venha">Venha Nos Conhecer</a></li>
+                </ul>
+
+            </nav>
 
         </header>
 
